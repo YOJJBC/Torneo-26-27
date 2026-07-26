@@ -62,7 +62,7 @@ body.dark header::after {
     height: 100%;
     pointer-events: none;
 
-    /* Estrellas pequeñas + grandes */
+    /* Estrellas pequeñas + grandes + tintineo fuerte */
     background:
         /* pequeñas */
         radial-gradient(circle, #ffd85a 0px, transparent 2px) 5% 12%,
@@ -97,7 +97,12 @@ body.dark header::after {
         radial-gradient(circle, #ffd85a 0px, transparent 3px) 20% 15%,
         radial-gradient(circle, #ffd85a 0px, transparent 3px) 45% 30%,
         radial-gradient(circle, #ffd85a 0px, transparent 3px) 70% 25%,
-        radial-gradient(circle, #ffd85a 0px, transparent 3px) 85% 60%;
+        radial-gradient(circle, #ffd85a 0px, transparent 3px) 85% 60%,
+
+        /* tintineo fuerte */
+        radial-gradient(circle, #ffe27a 0px, transparent 4px) 33% 22%,
+        radial-gradient(circle, #ffe27a 0px, transparent 4px) 58% 12%,
+        radial-gradient(circle, #ffe27a 0px, transparent 4px) 77% 42%;
 
     background-size:
         /* pequeñas */
@@ -109,11 +114,47 @@ body.dark header::after {
         4px 4px, 4px 4px,
 
         /* grandes */
-        7px 7px, 7px 7px, 7px 7px, 7px 7px;
+        7px 7px, 7px 7px, 7px 7px, 7px 7px,
+
+        /* tintineo fuerte */
+        8px 8px, 8px 8px, 8px 8px;
 
     background-repeat: no-repeat;
     animation: estrellasBlink 2.2s infinite ease-in-out;
     opacity: 0.9;
+}
+
+/* ======== ESTRELLA FUGAZ ======== */
+body.dark header::before {
+    content: "";
+    position: absolute;
+    top: 20px;
+    left: -50px;
+    width: 3px;
+    height: 3px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0px 0px 8px white;
+
+    animation: estrellaFugaz 4s linear infinite;
+}
+
+@keyframes estrellaFugaz {
+    0% {
+        transform: translateX(0) translateY(0);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    50% {
+        transform: translateX(300px) translateY(80px);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(600px) translateY(140px);
+        opacity: 0;
+    }
 }
 
 /* ======== BALÓN ======== */
@@ -122,7 +163,7 @@ header h1::before {
     position: fixed;
     left: -140px;
     top: 46px;
-    font-size: 24px; /* tamaño corregido */
+    font-size: 24px;
     transform: translateX(-200vw);
     animation: balonPantalla 9s infinite linear;
     z-index: 9999;
@@ -161,13 +202,13 @@ header h1::before {
 #toggle-mode::before {
     content: "🌙";
     color: #fff;
-    font-size: 24px;
+    font-size: 16px;
 }
 
 body.light #toggle-mode::before {
     content: "☀️";
     color: #eaeaea;
-    font-size: 24px;
+    font-size: 16px;
 }
 
 /* ======== MENÚ ======== */
