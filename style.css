@@ -117,7 +117,7 @@ header h1::before {
     top: 46px; /* altura ajustada */
     font-size: 16px;
     transform: translateX(-200vw);
-    animation: balonPantalla 9s infinite linear;
+    animation: balonPantalla 6s infinite linear;
     z-index: 9999;
     color: #ffffff;
     filter: drop-shadow(0px 0px 18px #00ffea);
