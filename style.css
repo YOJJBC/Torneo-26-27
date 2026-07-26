@@ -154,7 +154,7 @@ header h1::before {
 #toggle-mode::before {
     content: "🌙";
     color: #fff;
-    font-size: 34px;
+    font-size: 18px;
 }
 
 body.light #toggle-mode::before {
