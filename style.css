@@ -121,7 +121,7 @@ header h1::before {
     animation: balonPantalla 9s infinite linear;
     z-index: 9999;
     color: #ffffff;
-    filter: drop-shadow(0px 0px 18px #00ffea);
+    filter: drop-shadow(0px 0px 45px #00ffea);
 }
 
 @keyframes balonPantalla {
