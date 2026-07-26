@@ -260,7 +260,7 @@ footer {
     border: none;
 }
 
-/* ======== EN MÓVIL SIGUE AL 100% ======== */
+/* ======== EN MÓVIL SIGUE AL 50% ======== */
 @media (max-width: 768px) {
     #escrutador iframe {
         width: 50%;
