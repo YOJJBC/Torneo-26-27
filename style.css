@@ -29,7 +29,8 @@ header {
     background: #000;
     color: #fff;
 
-    padding: 0px -10px; /* césped lo más arriba posible */
+    /* Césped más arriba */
+    padding: 0px 20px;
     border-bottom: 5px solid #2ecc71;
 
     box-shadow: 0px 4px 6px rgba(46, 204, 113, 0.6);
@@ -42,8 +43,6 @@ header {
     z-index: 10;
 }
 
-
-
 /* ======== HEADER EN MODO CLARO ======== */
 body.light header {
     background: linear-gradient(
@@ -55,7 +54,7 @@ body.light header {
     color: #5a5a5a;
 }
 
-/* ======== 40 ESTRELLAS ======== */
+/* ======== ESTRELLAS ======== */
 body.dark header::after {
     content: "";
     position: absolute;
@@ -115,15 +114,17 @@ header h1::before {
     content: "⚽";
     position: fixed;
     left: -140px;
-    top: 56px; /* altura ajustada */
-    font-size: 24px;
+    top: 46px;
+    font-size: 40px;
     transform: translateX(-200vw);
     animation: balonPantalla 9s infinite linear;
     z-index: 9999;
     color: #ffffff;
-   filter: 
-    drop-shadow(0px 0px 25px #00ffea)
-    drop-shadow(0px 0px 45px #00ffea);
+
+    /* Doble brillo */
+    filter: 
+        drop-shadow(0px 0px 25px #00ffea)
+        drop-shadow(0px 0px 45px #00ffea);
 }
 
 @keyframes balonPantalla {
@@ -154,12 +155,13 @@ header h1::before {
 #toggle-mode::before {
     content: "🌙";
     color: #fff;
-    font-size: 18px;
+    font-size: 26px; /* tamaño reducido */
 }
 
 body.light #toggle-mode::before {
     content: "☀️";
     color: #5a5a5a;
+    font-size: 26px; /* tamaño reducido */
 }
 
 /* ======== MENÚ ======== */
