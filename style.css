@@ -118,7 +118,7 @@ header h1::before {
     content: "⚽";
     position: fixed;
     left: -140px;
-    top: 76px;
+    top: 46px;
     font-size: 16px;
     transform: translateX(-200vw);
     animation: balonPantalla 9s infinite linear;
