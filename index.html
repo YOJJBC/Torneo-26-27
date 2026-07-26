@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Gram Torneo ( Temp. 26/27 )</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="dark">
+
+    <!-- HEADER -->
+    <header>
+        <!-- BOTÓN SOL/LUNA -->
+        <button id="toggle-mode"></button>
+
+        <h1>El Gram Torneo ( Temp. 26/27 )<</h1>
+    </header>
+
+    <!-- MENÚ -->
+    <nav>
+        <button onclick="mostrarSeccion('calendario')">📅 Calendario</button>
+        <button onclick="mostrarSeccion('clasificacion')">📊 Clasificación</button>
+        <button onclick="mostrarSeccion('resultados')">⚽ Resultados</button>
+        <button onclick="mostrarSeccion('escrutador')">🧮 Escrutador</button>
+    </nav>
+
+    <!-- CONTENIDO -->
+    <main>
+
+        <!-- SECCIÓN CALENDARIO -->
+        <div id="calendario" class="seccion">
+            <h2>Calendario</h2>
+            <p>Aquí irá el calendario del torneo.</p>
+        </div>
+
+        <!-- SECCIÓN CLASIFICACIÓN -->
+        <div id="clasificacion" class="seccion">
+            <h2>Clasificación</h2>
+            <p>Aquí irá la tabla de clasificación.</p>
+        </div>
+
+        <!-- SECCIÓN RESULTADOS -->
+        <div id="resultados" class="seccion">
+            <h2>Resultados</h2>
+            <p>Aquí irán los resultados de los partidos.</p>
+        </div>
+
+        <!-- SECCIÓN ESCRUTADOR -->
+        <div id="escrutador" class="seccion">
+            <h2>Escrutador</h2>
+
+            <iframe src="https://1drv.ms/x/c/9e2ad67d77893109/IQRKLS76eZCRQZ54Qma-2pFUAdmMrgJh6S6kH5fDoPp6b0U?em=2&ActiveCell='Escrutador%202.0'!G18&Item='Escrutador%202.0'!C14%3AAN50&wdHideGridlines=True&wdInConfigurator=True">
+            </iframe>
+        </div>
+
+    </main>
+
+    <!-- SCRIPT -->
+    <script>
+        // Mostrar secciones
+        function mostrarSeccion(id) {
+            document.querySelectorAll('.seccion').forEach(sec => {
+                sec.style.display = "none";
+                sec.style.opacity = 0;
+            });
+
+            const s = document.getElementById(id);
+            s.style.display = "block";
+            setTimeout(() => s.style.opacity = 1, 50);
+        }
+
+        // Modo claro / oscuro
+        const toggle = document.getElementById("toggle-mode");
+
+        toggle.addEventListener("click", () => {
+            document.body.classList.toggle("light");
+            document.body.classList.toggle("dark");
+        });
+    </script>
+
+</body>
+</html>
