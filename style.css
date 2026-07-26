@@ -102,7 +102,7 @@ header h1::before {
     position: fixed;
     left: -140px;
     top: 46px;
-    font-size: 40px;
+    font-size: 24px;
     transform: translateX(-200vw);
     animation: balonPantalla 9s infinite linear;
     z-index: 9999;
