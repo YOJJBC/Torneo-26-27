@@ -43,18 +43,17 @@ header {
     z-index: 10;
 }
 
-/* ======== HEADER EN MODO CLARO ======== */
+/* ======== HEADER GALAXIA EN MODO CLARO ======== */
 body.light header {
-    background: linear-gradient(
-        to bottom,
-        #b3e6ff 0%,
-        #8fd8ff 40%,
-        #6fcaff 100%
+    background: linear-gradient(90deg,
+        #0f0c29,
+        #302b63,
+        #24243e
     );
-    color: #5a5a5a;
+    color: #eaeaea;
 }
 
-/* ======== ESTRELLAS ======== */
+/* ======== ESTRELLAS MODO OSCURO ======== */
 body.dark header::after {
     content: "";
     position: absolute;
@@ -90,19 +89,7 @@ body.dark header::after {
                 radial-gradient(circle, #ffd85a 0px, transparent 2px) 92% 72%,
                 radial-gradient(circle, #ffd85a 0px, transparent 2px) 94% 40%,
                 radial-gradient(circle, #ffd85a 0px, transparent 2px) 96% 20%,
-                radial-gradient(circle, #ffd85a 0px, transparent 2px) 98% 60%,
-                radial-gradient(circle, #ffd85a 0px, transparent 2px) 15% 85%,
-                radial-gradient(circle, #ffd85a 0px, transparent 2px) 22% 65%,
-                radial-gradient(circle, #ffd85a 0px, transparent 2px) 28% 90%,
-                radial-gradient(circle, #ffd85a 0px, transparent 2px) 33% 30%,
-                radial-gradient(circle, #ffd85a 0px, transparent 2px) 48% 90%,
-                radial-gradient(circle, #ffd85a 0px, transparent 2px) 52% 10%,
-                radial-gradient(circle, #ffd85a 0px, transparent 2px) 58% 92%,
-                radial-gradient(circle, #ffd85a 0px, transparent 2px) 63% 55%,
-                radial-gradient(circle, #ffd85a 0px, transparent 2px) 77% 92%,
-                radial-gradient(circle, #ffd85a 0px, transparent 2px) 83% 10%,
-                radial-gradient(circle, #ffd85a 0px, transparent 2px) 91% 90%,
-                radial-gradient(circle, #ffd85a 0px, transparent 2px) 97% 45%;
+                radial-gradient(circle, #ffd85a 0px, transparent 2px) 98% 60%;
     background-size: 4px 4px;
     background-repeat: no-repeat;
     animation: estrellasBlink 2.2s infinite ease-in-out;
@@ -155,13 +142,13 @@ header h1::before {
 #toggle-mode::before {
     content: "🌙";
     color: #fff;
-    font-size: 26px; /* tamaño reducido */
+    font-size: 26px;
 }
 
 body.light #toggle-mode::before {
     content: "☀️";
-    color: #5a5a5a;
-    font-size: 26px; /* tamaño reducido */
+    color: #eaeaea;
+    font-size: 26px;
 }
 
 /* ======== MENÚ ======== */
