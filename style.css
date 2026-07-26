@@ -234,7 +234,7 @@ iframe {
 
 /* ======== ESCRUTADOR MÁS PEQUEÑO EN PC ======== */
 #escrutador iframe {
-    width: 80%;
+    width: 100%;
     height: 800px;
     margin: 0 auto;
     display: block;
