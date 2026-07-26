@@ -18,11 +18,13 @@ body.light {
     color: #333;
 }
 
+
 /*======= HEADER =======*/
 header {
     text-align: center;
     padding: 20px 0;
     position: relative;
+    border-bottom: 3px solid #2ecc71; /* línea verde */
 }
 
 header h1 {
@@ -30,6 +32,7 @@ header h1 {
     font-weight: bold;
     letter-spacing: 1px;
 }
+
 
 /*======= BALÓN =======*/
 header h1::before {
@@ -46,11 +49,11 @@ header h1::before {
     filter: drop-shadow(0px 0px 6px #00ffea);
 }
 
-/* Animación del balón */
 @keyframes balonPantalla {
     0% { transform: translateX(-200vw); }
     100% { transform: translateX(200vw); }
 }
+
 
 /*======= BOTÓN MODO =======*/
 #toggle-mode {
@@ -64,7 +67,7 @@ header h1::before {
     transition: transform 0.3s ease;
     z-index: 20;
 
-    color: transparent;
+    color: transparent; /* elimina texto residual */
     font-size: 0;
 }
 
@@ -82,6 +85,7 @@ body.light #toggle-mode::before {
     content: "☀️";
     color: #5a5a5a;
 }
+
 
 /*======= MENÚ =======*/
 nav {
@@ -113,6 +117,7 @@ body.light nav button:hover {
     background-color: #bbb;
 }
 
+
 /*======= SECCIONES =======*/
 .seccion {
     display: none;
@@ -128,7 +133,8 @@ body.light nav button:hover {
     border: none;
 }
 
-/*======= FOOTER =======*/
+
+/*======= PIE DE PÁGINA =======*/
 footer {
     text-align: center;
     padding: 20px;
