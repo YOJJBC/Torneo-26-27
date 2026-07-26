@@ -15,7 +15,7 @@ function mostrarSeccion(id) {
     }, 10);
 }
 
-// MODO OSCURO / CLARO CON ICONO DINÁMICO
+// MODO OSCURO / CLARO (icono controlado SOLO por CSS)
 document.addEventListener('DOMContentLoaded', () => {
 
     // Modo por defecto → oscuro
@@ -23,20 +23,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const btn = document.getElementById('toggle-mode');
 
-    // Icono inicial (modo oscuro → mostrar sol)
-    btn.textContent = "☀️";
-
     btn.addEventListener('click', () => {
 
-        // SOLO CAMBIA EL MODO, NO CAMBIA DE SECCIÓN
         if (document.body.classList.contains('dark')) {
 
             // Pasar a modo claro
             document.body.classList.remove('dark');
             document.body.classList.add('light');
-
-            // Mostrar luna (porque ahora estás en claro)
-            btn.textContent = "🌙";
 
         } else {
 
@@ -44,8 +37,6 @@ document.addEventListener('DOMContentLoaded', () => {
             document.body.classList.remove('light');
             document.body.classList.add('dark');
 
-            // Mostrar sol (porque ahora estás en oscuro)
-            btn.textContent = "☀️";
         }
     });
 });
