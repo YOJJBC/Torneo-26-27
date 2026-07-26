@@ -1,4 +1,6 @@
-// CAMBIO DE SECCIONES CON ANIMACIÓN
+// =========================
+// CAMBIO DE SECCIONES
+// =========================
 function mostrarSeccion(id) {
     document.querySelectorAll('.seccion').forEach(sec => {
         sec.style.display = 'none';
@@ -6,37 +8,53 @@ function mostrarSeccion(id) {
         sec.style.transform = 'translateY(5px)';
     });
 
-    const target = document.getElementById(id);
-    target.style.display = 'block';
+    const activa = document.getElementById(id);
+    activa.style.display = 'block';
 
     setTimeout(() => {
-        target.style.opacity = 1;
-        target.style.transform = 'translateY(0)';
-    }, 10);
+        activa.style.opacity = 1;
+        activa.style.transform = 'translateY(0)';
+    }, 50);
 }
 
-// MODO OSCURO / CLARO (icono controlado SOLO por CSS)
-document.addEventListener('DOMContentLoaded', () => {
+// =========================
+// MODO CLARO / OSCURO
+// =========================
+const toggleBtn = document.getElementById("toggle-mode");
 
-    // Modo por defecto → oscuro
-    document.body.classList.add('dark');
-
-    const btn = document.getElementById('toggle-mode');
-
-    btn.addEventListener('click', () => {
-
-        if (document.body.classList.contains('dark')) {
-
-            // Pasar a modo claro
-            document.body.classList.remove('dark');
-            document.body.classList.add('light');
-
-        } else {
-
-            // Pasar a modo oscuro
-            document.body.classList.remove('light');
-            document.body.classList.add('dark');
-
-        }
-    });
+toggleBtn.addEventListener("click", () => {
+    document.body.classList.toggle("dark");
+    document.body.classList.toggle("light");
 });
+
+// =========================
+// ESTRELLA FUGAZ ALEATORIA
+// =========================
+function lanzarEstrellaFugaz() {
+    const header = document.querySelector("header");
+
+    // Crear estrella
+    const estrella = document.createElement("div");
+    estrella.classList.add("estrella-fugaz");
+
+    // Posición aleatoria en la parte superior del header
+    const startX = Math.random() * window.innerWidth * 0.6;
+    const startY = Math.random() * 40;
+
+    estrella.style.left = startX + "px";
+    estrella.style.top = startY + "px";
+
+    header.appendChild(estrella);
+
+    // Eliminar cuando termine la animación
+    estrella.addEventListener("animationend", () => {
+        estrella.remove();
+    });
+}
+
+// Lanzar una cada 4–7 segundos SOLO en modo oscuro
+setInterval(() => {
+    if (document.body.classList.contains("dark")) {
+        lanzarEstrellaFugaz();
+    }
+}, 4000 + Math.random() * 3000);
