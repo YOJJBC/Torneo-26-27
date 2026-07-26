@@ -159,8 +159,6 @@ header h1::before {
     padding: 0;
     transition: transform 0.3s ease;
     z-index: 20;
-    color: transparent;
-    font-size: 0;
 }
 
 #toggle-mode:hover {
@@ -235,6 +233,7 @@ iframe {
     margin: 0 auto;
 }
 
+/* Modo oscuro para iframes */
 body.dark iframe {
     background: #111;
     border: 1px solid #333;
