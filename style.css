@@ -88,18 +88,20 @@ header h1 {
 /* ======== ICONO SOL/LUNA ======== */
 #toggle-mode {
     position: absolute;
-    left: 20px;     /* ← Mover a la izquierda */
+    left: 20px;
     top: 6px;
-    font-size: 34px;
     background: none;
     border: none;
     cursor: pointer;
     padding: 0;
     transition: transform 0.3s ease;
     z-index: 20;
+
+    /* ELIMINA cualquier texto residual */
+    color: transparent;
+    font-size: 0;
 }
 
-/* Animación al pasar el ratón */
 #toggle-mode:hover {
     transform: scale(1.25);
 }
@@ -108,6 +110,7 @@ header h1 {
 #toggle-mode::before {
     content: "🌙";
     color: #fff;
+    font-size: 34px;
 }
 
 /* Icono en modo claro → sol */
@@ -115,7 +118,6 @@ body.light #toggle-mode::before {
     content: "☀️";
     color: #5a5a5a;
 }
-
 
 /* ======== BALÓN ======== */
 header h1::before {
