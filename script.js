@@ -1,25 +1,3 @@
-// Mostrar secciones
-function mostrarSeccion(id) {
-    document.querySelectorAll('.seccion').forEach(sec => {
-        sec.style.display = "none";
-        sec.style.opacity = 0;
-    });
-
-    const s = document.getElementById(id);
-    s.style.display = "block";
-    setTimeout(() => s.style.opacity = 1, 50);
-}
-
-// Modo claro / oscuro
-const toggle = document.getElementById("toggle-mode");
-
-toggle.addEventListener("click", () => {
-    document.body.classList.toggle("light");
-    document.body.classList.toggle("dark");
-});
-
-/////////////////////////////////////////////////////////////
-
 // CAMBIO DE SECCIONES CON ANIMACIÓN
 function mostrarSeccion(id) {
     document.querySelectorAll('.seccion').forEach(sec => {
