@@ -29,7 +29,6 @@ header {
     background: #000;
     color: #fff;
 
-    /* Césped más arriba */
     padding: 0px 20px;
     border-bottom: 5px solid #2ecc71;
 
@@ -63,34 +62,55 @@ body.dark header::after {
     height: 100%;
     pointer-events: none;
 
-    background: radial-gradient(circle, #ffd85a 0px, transparent 2px) 5% 12%,
-                radial-gradient(circle, #ffd85a 0px, transparent 2px) 12% 28%,
-                radial-gradient(circle, #ffd85a 0px, transparent 2px) 18% 45%,
-                radial-gradient(circle, #ffd85a 0px, transparent 2px) 25% 10%,
-                radial-gradient(circle, #ffd85a 0px, transparent 2px) 30% 70%,
-                radial-gradient(circle, #ffd85a 0px, transparent 2px) 35% 55%,
-                radial-gradient(circle, #ffd85a 0px, transparent 2px) 40% 20%,
-                radial-gradient(circle, #ffd85a 0px, transparent 2px) 45% 80%,
-                radial-gradient(circle, #ffd85a 0px, transparent 2px) 50% 35%,
-                radial-gradient(circle, #ffd85a 0px, transparent 2px) 55% 15%,
-                radial-gradient(circle, #ffd85a 0px, transparent 2px) 60% 60%,
-                radial-gradient(circle, #ffd85a 0px, transparent 2px) 62% 82%,
-                radial-gradient(circle, #ffd85a 0px, transparent 2px) 65% 25%,
-                radial-gradient(circle, #ffd85a 0px, transparent 2px) 68% 48%,
-                radial-gradient(circle, #ffd85a 0px, transparent 2px) 70% 10%,
-                radial-gradient(circle, #ffd85a 0px, transparent 2px) 72% 75%,
-                radial-gradient(circle, #ffd85a 0px, transparent 2px) 75% 40%,
-                radial-gradient(circle, #ffd85a 0px, transparent 2px) 78% 18%,
-                radial-gradient(circle, #ffd85a 0px, transparent 2px) 80% 65%,
-                radial-gradient(circle, #ffd85a 0px, transparent 2px) 82% 85%,
-                radial-gradient(circle, #ffd85a 0px, transparent 2px) 85% 30%,
-                radial-gradient(circle, #ffd85a 0px, transparent 2px) 88% 50%,
-                radial-gradient(circle, #ffd85a 0px, transparent 2px) 90% 12%,
-                radial-gradient(circle, #ffd85a 0px, transparent 2px) 92% 72%,
-                radial-gradient(circle, #ffd85a 0px, transparent 2px) 94% 40%,
-                radial-gradient(circle, #ffd85a 0px, transparent 2px) 96% 20%,
-                radial-gradient(circle, #ffd85a 0px, transparent 2px) 98% 60%;
-    background-size: 4px 4px;
+    /* Estrellas pequeñas + grandes */
+    background:
+        /* pequeñas */
+        radial-gradient(circle, #ffd85a 0px, transparent 2px) 5% 12%,
+        radial-gradient(circle, #ffd85a 0px, transparent 2px) 12% 28%,
+        radial-gradient(circle, #ffd85a 0px, transparent 2px) 18% 45%,
+        radial-gradient(circle, #ffd85a 0px, transparent 2px) 25% 10%,
+        radial-gradient(circle, #ffd85a 0px, transparent 2px) 30% 70%,
+        radial-gradient(circle, #ffd85a 0px, transparent 2px) 35% 55%,
+        radial-gradient(circle, #ffd85a 0px, transparent 2px) 40% 20%,
+        radial-gradient(circle, #ffd85a 0px, transparent 2px) 45% 80%,
+        radial-gradient(circle, #ffd85a 0px, transparent 2px) 50% 35%,
+        radial-gradient(circle, #ffd85a 0px, transparent 2px) 55% 15%,
+        radial-gradient(circle, #ffd85a 0px, transparent 2px) 60% 60%,
+        radial-gradient(circle, #ffd85a 0px, transparent 2px) 62% 82%,
+        radial-gradient(circle, #ffd85a 0px, transparent 2px) 65% 25%,
+        radial-gradient(circle, #ffd85a 0px, transparent 2px) 68% 48%,
+        radial-gradient(circle, #ffd85a 0px, transparent 2px) 70% 10%,
+        radial-gradient(circle, #ffd85a 0px, transparent 2px) 72% 75%,
+        radial-gradient(circle, #ffd85a 0px, transparent 2px) 75% 40%,
+        radial-gradient(circle, #ffd85a 0px, transparent 2px) 78% 18%,
+        radial-gradient(circle, #ffd85a 0px, transparent 2px) 80% 65%,
+        radial-gradient(circle, #ffd85a 0px, transparent 2px) 82% 85%,
+        radial-gradient(circle, #ffd85a 0px, transparent 2px) 85% 30%,
+        radial-gradient(circle, #ffd85a 0px, transparent 2px) 88% 50%,
+        radial-gradient(circle, #ffd85a 0px, transparent 2px) 90% 12%,
+        radial-gradient(circle, #ffd85a 0px, transparent 2px) 92% 72%,
+        radial-gradient(circle, #ffd85a 0px, transparent 2px) 94% 40%,
+        radial-gradient(circle, #ffd85a 0px, transparent 2px) 96% 20%,
+        radial-gradient(circle, #ffd85a 0px, transparent 2px) 98% 60%,
+
+        /* grandes */
+        radial-gradient(circle, #ffd85a 0px, transparent 3px) 20% 15%,
+        radial-gradient(circle, #ffd85a 0px, transparent 3px) 45% 30%,
+        radial-gradient(circle, #ffd85a 0px, transparent 3px) 70% 25%,
+        radial-gradient(circle, #ffd85a 0px, transparent 3px) 85% 60%;
+
+    background-size:
+        /* pequeñas */
+        4px 4px, 4px 4px, 4px 4px, 4px 4px, 4px 4px,
+        4px 4px, 4px 4px, 4px 4px, 4px 4px, 4px 4px,
+        4px 4px, 4px 4px, 4px 4px, 4px 4px, 4px 4px,
+        4px 4px, 4px 4px, 4px 4px, 4px 4px, 4px 4px,
+        4px 4px, 4px 4px, 4px 4px, 4px 4px, 4px 4px,
+        4px 4px, 4px 4px,
+
+        /* grandes */
+        7px 7px, 7px 7px, 7px 7px, 7px 7px;
+
     background-repeat: no-repeat;
     animation: estrellasBlink 2.2s infinite ease-in-out;
     opacity: 0.9;
@@ -102,13 +122,12 @@ header h1::before {
     position: fixed;
     left: -140px;
     top: 46px;
-    font-size: 24px;
+    font-size: 24px; /* tamaño corregido */
     transform: translateX(-200vw);
     animation: balonPantalla 9s infinite linear;
     z-index: 9999;
     color: #ffffff;
 
-    /* Doble brillo */
     filter: 
         drop-shadow(0px 0px 25px #00ffea)
         drop-shadow(0px 0px 45px #00ffea);
@@ -142,13 +161,13 @@ header h1::before {
 #toggle-mode::before {
     content: "🌙";
     color: #fff;
-    font-size: 26px;
+    font-size: 24px;
 }
 
 body.light #toggle-mode::before {
     content: "☀️";
     color: #eaeaea;
-    font-size: 26px;
+    font-size: 24px;
 }
 
 /* ======== MENÚ ======== */
