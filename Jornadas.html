@@ -17,37 +17,55 @@
 
     <!-- MENÚ -->
     <nav>
-        <button onclick="location.href='index.html'">🏠 Inicio</button>
         <button onclick="location.href='index.html#calendario'">📅 Calendario</button>
         <button onclick="location.href='index.html#clasificacion'">📊 Clasificación</button>
         <button onclick="location.href='index.html#resultados'">⚽ Resultados</button>
         <button onclick="location.href='index.html#escrutador'">🧮 Escrutador</button>
-        <button onclick="location.href='Jornadas.html'">📆 Jornadas</button>
+        <button onclick="location.href='index.html#jornadas'">📆 Jornadas</button>
     </nav>
 
     <!-- CONTENIDO -->
     <main>
 
+        <!-- BOTONES DE JORNADAS (MISMO ORDEN QUE INDEX) -->
+        <div class="lista-jornadas">
+            <script>
+                for (let i = 1; i <= 38; i++) {
+                    let num = String(i).padStart(2, '0');
+
+                    // SALTO antes de la Jornada 20
+                    if (i === 20) {
+                        document.write(`<div style="flex-basis: 100%; height: 0;"></div>`);
+                    }
+
+                    document.write(`
+                        <button class="btn-jornada" onclick="location.href='Jornadas.html?id=${i}'">
+                            Jornada ${num}
+                        </button>
+                    `);
+                }
+            </script>
+        </div>
+
+        <!-- TÍTULO DE LA JORNADA -->
         <h2 id="titulo"></h2>
 
+        <!-- IFRAME -->
         <iframe id="cuadro" width="1100px" height="1500px"></iframe>
 
     </main>
 
+    <!-- SCRIPT PARA CARGAR LA JORNADA -->
     <script>
-        // Obtener ID de la jornada
         const params = new URLSearchParams(window.location.search);
         const id = Number(params.get("id"));
 
-        // Doble dígito
         const num = String(id).padStart(2, '0');
         document.getElementById("titulo").innerText = "Jornada " + num;
 
-        // Cálculo del rango (40 filas por jornada)
         const inicio = (id - 1) * 40 + 1;
         const fin = inicio + 39;
 
-        // Cargar el rango correcto del Excel
         document.getElementById("cuadro").src =
             `https://1drv.ms/x/c/9e2ad67d77893109/IQRKLS76eZCRQZ54Qma-2pFUAdmMrgJh6S6kH5fDoPp6b0U?em=2&Item='Jornadas'!A${inicio}:Z${fin}&wdHideGridlines=True&wdInConfigurator=True`;
     </script>
