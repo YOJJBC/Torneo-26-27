@@ -39,27 +39,19 @@
     <h2>Jornadas</h2>
 
     <div class="lista-jornadas">
-      <script>
-    for (let i = 1; i <= 38; i++) {
-        let num = String(i).padStart(2, '0'); // doble dígito
+        <script>
+            for (let i = 1; i <= 38; i++) {
+                let num = String(i).padStart(2, '0');
 
-        // SALTO antes de la Jornada 20
-        if (i === 20) {
-            document.write(`<div style="flex-basis: 100%; height: 0;"></div>`);
-        }
-
-        document.write(`
-            <button class="btn-jornada" onclick="location.href='jornada.html?id=${i}'">
-                Jornada ${num}
-            </button>
-        `);
-    }
-</script>
-
+                document.write(`
+                    <button class="btn-jornada" onclick="location.href='Jornadas.html?id=${i}'">
+                        Jornada ${num}
+                    </button>
+                `);
+            }
+        </script>
     </div>
 </div>
-
-
         <!-- SECCIÓN CLASIFICACIÓN -->
         <div id="clasificacion" class="seccion">
             <h2>Clasificación</h2>
