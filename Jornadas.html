@@ -2,32 +2,82 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jornadas</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="light">
+<body class="dark">
 
-    <h2 id="titulo"></h2>
+    <!-- HEADER -->
+    <header>
+        <button id="toggle-mode"></button>
+        <h1>Temp. 26/27</h1>
+    </header>
 
-    <iframe id="cuadro" width="1100px" height="1500px"></iframe>
+    <!-- MENÚ -->
+    <nav>
+        <button onclick="location.href='index.html'">🏠 Inicio</button>
+        <button onclick="location.href='index.html#calendario'">📅 Calendario</button>
+        <button onclick="location.href='index.html#clasificacion'">📊 Clasificación</button>
+        <button onclick="location.href='index.html#resultados'">⚽ Resultados</button>
+        <button onclick="location.href='index.html#escrutador'">🧮 Escrutador</button>
+        <button onclick="location.href='Jornadas.html'">📆 Jornadas</button>
+    </nav>
+
+    <!-- CONTENIDO -->
+    <main>
+
+        <h2 id="titulo"></h2>
+
+        <iframe id="cuadro" width="1100px" height="1500px"></iframe>
+
+    </main>
 
     <script>
+        // Obtener ID de la jornada
         const params = new URLSearchParams(window.location.search);
-        const id = Number(params.get("id"));   // 1, 2, 3...
+        const id = Number(params.get("id"));
 
         // Doble dígito
         const num = String(id).padStart(2, '0');
         document.getElementById("titulo").innerText = "Jornada " + num;
 
-        // Cada jornada ocupa 40 filas en tu Excel
+        // Cálculo del rango (40 filas por jornada)
         const inicio = (id - 1) * 40 + 1;
         const fin = inicio + 39;
 
+        // Cargar el rango correcto del Excel
         document.getElementById("cuadro").src =
             `https://1drv.ms/x/c/9e2ad67d77893109/IQRKLS76eZCRQZ54Qma-2pFUAdmMrgJh6S6kH5fDoPp6b0U?em=2&Item='Jornadas'!A${inicio}:Z${fin}&wdHideGridlines=True&wdInConfigurator=True`;
     </script>
 
+    <!-- ESTRELLAS FUGACES -->
+    <script>
+        function lanzarEstrellaFugaz() {
+            const header = document.querySelector("header");
+            const estrella = document.createElement("div");
+            estrella.classList.add("estrella-fugaz");
+
+            const startX = Math.random() * window.innerWidth * 0.6;
+            const startY = Math.random() * 40;
+
+            estrella.style.left = startX + "px";
+            estrella.style.top = startY + "px";
+
+            header.appendChild(estrella);
+
+            estrella.addEventListener("animationend", () => estrella.remove());
+        }
+
+        setInterval(() => {
+            if (document.body.classList.contains("dark")) {
+                lanzarEstrellaFugaz();
+            }
+        }, 4000 + Math.random() * 3000);
+    </script>
+
+    <script src="script.js"></script>
+
 </body>
 </html>
-
